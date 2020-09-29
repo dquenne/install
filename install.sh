@@ -562,11 +562,11 @@ ohai "Downloading and installing Homebrew..."
   execute "git" "fetch" "origin" "--force"
   execute "git" "fetch" "origin" "--tags" "--force"
 
-  execute "git" "reset" "--hard" "origin/master"
+  execute "git" "reset" "--hard" "2.4.16"
 
   execute "ln" "-sf" "${HOMEBREW_REPOSITORY}/bin/brew" "${HOMEBREW_PREFIX}/bin/brew"
 
-  execute "${HOMEBREW_PREFIX}/bin/brew" "update" "--force"
+  # execute "${HOMEBREW_PREFIX}/bin/brew" "update" "--force"
 ) || exit 1
 
 if [[ ":${PATH}:" != *":${HOMEBREW_PREFIX}/bin:"* ]]; then
